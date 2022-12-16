@@ -1,0 +1,22 @@
+[
+    {
+        "name" : "Jasur" , 
+        "age" : 16 , 
+        "isMarrid" : false
+    } , 
+    {
+        "name" : "Dinara" , 
+        "age" : 16 , 
+        "isMarrid" : false
+    } , 
+    {
+        "name" : "Lola" , 
+        "age" : 16 , 
+        "isMarrid" : false
+    } ,  
+    {
+        "name" : "Jas" , 
+        "age" : 16 , 
+        "isMarrid" : false
+    } 
+]
