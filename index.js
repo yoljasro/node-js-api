@@ -16,8 +16,8 @@ const options = {
              
     servers: [
       {
-        url: "http://localhost:3000",
-      },
+        url: "http://139.144.180.200:3000",
+      },  
     ],
   },
   apis: ["./index.js"],
