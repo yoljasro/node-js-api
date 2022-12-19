@@ -1,22 +1,163 @@
 [
     {
-        "name" : "Jasur" , 
-        "age" : 16 , 
-        "isMarrid" : false
-    } , 
+        "id":1,
+        "name":"name1",
+        "size":"44-50",
+        "place":"Turkey",
+        "price":50,
+        "phone":"+998941234567"
+    },
     {
-        "name" : "Dinara" , 
-        "age" : 16 , 
-        "isMarrid" : false
-    } , 
+        "id":2,
+        "name":"name2",
+        "size":"44-48",
+        "place":"Turkey",
+        "price":52,
+        "phone":"+998941234567"
+    },
     {
-        "name" : "Lola" , 
-        "age" : 16 , 
-        "isMarrid" : false
-    } ,  
+        "id":3,
+        "name":"name3",
+        "size":"44-49",
+        "place":"Turkey",
+        "price":45,
+        "phone":"+998941234567"
+    },
     {
-        "name" : "Jas" , 
-        "age" : 16 , 
-        "isMarrid" : false
-    } 
+        "id":4,
+        "name":"name4",
+        "size":"46-50",
+        "place":"China",
+        "price":30,
+        "phone":"+998941234567"
+    },
+    {
+        "id":5,
+        "name":"name5",
+        "size":"44-50",
+        "place":"China",
+        "price":50,
+        "phone":"+998941234567"
+    },
+    {
+        "id":6,
+        "name":"name6",
+        "size":"44-48",
+        "place":"Turkey",
+        "price":60,
+        "phone":"+998941234567"
+    },
+    {
+        "id":7,
+        "name":"name7",
+        "size":"26cm x 35 cm",
+        "place":"Korea",
+        "price":32,
+        "phone":"+998941234567"
+    },
+    {
+        "id":8,
+        "name":"name8",
+        "size":"26cm x 35 cm",
+        "place":"Korea",
+        "price":32,
+        "phone":"+998941234567"
+    },
+    {
+        "id":9,
+        "name":"name9",
+        "size":"26cm x 35 cm",
+        "place":"Korea",
+        "price":31,
+        "phone":"+998941234567"
+    },
+    {
+        "id":10,
+        "name":"name10",
+        "size":"26cm x 29cm",
+        "place":"Turkey",
+        "price":40,
+        "phone":"+998941234567"
+    },
+    {
+        "id":11,
+        "name":"name11",
+        "size":"26cm x 29cm",
+        "place":"Turkey",
+        "price":40,
+        "phone":"+998941234567"
+    },
+    {
+        "id":12,
+        "name":"name12",
+        "size":"26cm x 29cm",
+        "place":"Turkey",
+        "price":41,
+        "phone":"+998941234567"
+    },
+    {
+        "id":13,
+        "name":"name13",
+        "size":"26cm x 29cm",
+        "place":"Turkey",
+        "price":40,
+        "phone":"+998941234567"
+    },
+    {
+        "id":14,
+        "name":"name14",
+        "size":"26cm x 29cm",
+        "place":"Turkey",
+        "price":42,
+        "phone":"+998941234567"
+    },
+    {
+        "id":15,
+        "name":"name15",
+        "size":"26cm x 29cm",
+        "place":"Turkey",
+        "price":40,
+        "phone":"+998941234567"
+    },
+    {
+        "id":16,
+        "name":"name16",
+        "size":"36-40",
+        "place":"China",
+        "price":19,
+        "phone":"+998941234567"
+    },
+    {
+        "id":17,
+        "name":"name17",
+        "size":"36-40",
+        "place":"China",
+        "price":19,
+        "phone":"+998941234567"
+    },
+    {
+        "id":18,
+        "name":"name18",
+        "size":"26cm x 33cm",
+        "place":"Korea",
+        "price":42,
+        "phone":"+998941234567"
+    },
+    {
+        "id":19,
+        "name":"name19",
+        "size":"25cm x 33cm",
+        "place":"Korea",
+        "price":40,
+        "phone":"+998941234567"
+    },
+    {
+        "id":20,
+        "name":"name20",
+        "size":"44-49",
+        "place":"Turkey",
+        "price":12,
+        "phone":"+998941234567"
+    }
+
 ]

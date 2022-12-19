@@ -1,18 +1,19 @@
 const express = require("express");
 const app = express();
 const importData = require("./data.json");
-const cardData = require("./card-data.json");
 const swaggerJSDOC = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
+const cors = require("cors")
 let port = process.env.PORT || 3000;
-
+ 
 const options = {
   definition: {
     openapi: "3.0.0",
     info: {
       title: "Node Js API from JasurBek",
       version: "1.0.0",
-    },
+    },  
+             
     servers: [
       {
         url: "http://localhost:3000",
@@ -21,6 +22,7 @@ const options = {
   },
   apis: ["./index.js"],
 };
+app.use(cors())
 const swaggerSpec = swaggerJSDOC(options);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
