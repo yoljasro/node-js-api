@@ -1,11 +1,12 @@
 [
     {
         "id":1,
-        "name":"name1",
+        "name":"jasur",
         "size":"44-50",
         "place":"Turkey",
         "price":50,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img1.jpg"
     },
     {
         "id":2,
@@ -13,7 +14,8 @@
         "size":"44-48",
         "place":"Turkey",
         "price":52,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img2.jpg"
     },
     {
         "id":3,
@@ -21,7 +23,8 @@
         "size":"44-49",
         "place":"Turkey",
         "price":45,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img3.jpg"
     },
     {
         "id":4,
@@ -29,7 +32,8 @@
         "size":"46-50",
         "place":"China",
         "price":30,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img4.jpg"
     },
     {
         "id":5,
@@ -37,7 +41,8 @@
         "size":"44-50",
         "place":"China",
         "price":50,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img5.jpg"
     },
     {
         "id":6,
@@ -45,7 +50,8 @@
         "size":"44-48",
         "place":"Turkey",
         "price":60,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img6.jpg"
     },
     {
         "id":7,
@@ -53,7 +59,8 @@
         "size":"26cm x 35 cm",
         "place":"Korea",
         "price":32,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img7.jpg"
     },
     {
         "id":8,
@@ -61,7 +68,8 @@
         "size":"26cm x 35 cm",
         "place":"Korea",
         "price":32,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img8.jpg"
     },
     {
         "id":9,
@@ -69,7 +77,8 @@
         "size":"26cm x 35 cm",
         "place":"Korea",
         "price":31,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img9.jpg"
     },
     {
         "id":10,
@@ -77,7 +86,8 @@
         "size":"26cm x 29cm",
         "place":"Turkey",
         "price":40,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img10.jpg"
     },
     {
         "id":11,
@@ -85,7 +95,8 @@
         "size":"26cm x 29cm",
         "place":"Turkey",
         "price":40,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img11.jpg"
     },
     {
         "id":12,
@@ -93,7 +104,8 @@
         "size":"26cm x 29cm",
         "place":"Turkey",
         "price":41,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img12.jpg"
     },
     {
         "id":13,
@@ -101,7 +113,8 @@
         "size":"26cm x 29cm",
         "place":"Turkey",
         "price":40,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img13.jpg"
     },
     {
         "id":14,
@@ -109,7 +122,8 @@
         "size":"26cm x 29cm",
         "place":"Turkey",
         "price":42,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img14.jpg"
     },
     {
         "id":15,
@@ -117,7 +131,8 @@
         "size":"26cm x 29cm",
         "place":"Turkey",
         "price":40,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img15.jpg"
     },
     {
         "id":16,
@@ -125,7 +140,8 @@
         "size":"36-40",
         "place":"China",
         "price":19,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img16.jpg"
     },
     {
         "id":17,
@@ -133,7 +149,8 @@
         "size":"36-40",
         "place":"China",
         "price":19,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img17.jpg"
     },
     {
         "id":18,
@@ -141,7 +158,8 @@
         "size":"26cm x 33cm",
         "place":"Korea",
         "price":42,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img18.jpg"
     },
     {
         "id":19,
@@ -149,15 +167,17 @@
         "size":"25cm x 33cm",
         "place":"Korea",
         "price":40,
-        "phone":"+998941234567"
+        "phone":"+998941234567",
+        "image":"img19.jpg"
     },
     {
         "id":20,
         "name":"name20",
         "size":"44-49",
         "place":"Turkey",
-        "price":12,
-        "phone":"+998941234567"
+        "price":12, 
+        "phone":"+998941234567",
+        "image":"img10.jpg"
     }
 
 ]

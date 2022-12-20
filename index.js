@@ -4,6 +4,8 @@ const importData = require("./data.json");
 const swaggerJSDOC = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 const cors = require("cors")
+const path = require("path")
+var multer = require('multer')
 let port = process.env.PORT || 3000;
  
 const options = {
@@ -15,14 +17,19 @@ const options = {
     },  
              
     servers: [
-      {
-        url: "http://139.144.180.200:3000",
+      { 
+        url: "http://localhost:3000",
       },  
+      {
+        url : "http://139.144.180.200:3000"
+      }
     ],
   },
   apis: ["./index.js"],
 };
 app.use(cors())
+app.use('/', express.static(path.join(__dirname, "public/img")));
+
 const swaggerSpec = swaggerJSDOC(options);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
