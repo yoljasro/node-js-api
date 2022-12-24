@@ -5,10 +5,13 @@ const swaggerJSDOC = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 const cors = require("cors");
 const path = require("path");
-const multer = require("multer");
+const { model, Schema } = require("mongoose");
+const {
+  createProductController,
+} = require("./controllers/product-info.controller");
 const mongoose = require("mongoose");
+const { json } = require("body-parser");
 let port = process.env.PORT || 3000;
-
 
 const options = {
   definition: {
@@ -31,16 +34,17 @@ const options = {
 };
 
 app.use(cors());
-app.use("/", express.static(path.join(__dirname, "public/img")));
+app.use(json());
 
 const swaggerSpec = swaggerJSDOC(options);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-
+// mongodb+srv://<username>:<password>@cluster0.luf7pct.mongodb.net/?retryWrites=true&w=majority
 const uri =
-  "mongodb+srv://jasur:ys9gxVhjfSVaNLxI@cluster0.luf7pct.mongodb.net/test?retryWrites=true&w=majority";
+  "mongodb+srv://jasur:YXnNb3qrDRuQutbR@cluster0.luf7pct.mongodb.net/test";
 
 async function connect() {
+
   try {
     await mongoose.connect(uri);
     console.log("Connected MongoDB ");
@@ -67,11 +71,11 @@ connect();
  *     description: This is post method
  *     responses:
  *       201:
- *         description: Success or Saved
+ *         description: Products saved in Database
  * 403 :
- *      description : Unauthorized
+ *      description : Forbidden
  *parameters : 
-    -name : TITLE
+    -name : TITLE 
     in : formData
     required : true
  */
@@ -100,15 +104,13 @@ app.get("/", (req, res) => {
   res.send("Hello  world");
 });
 
-app.get("/getData", (req, res) => {
+app.get("/product-info", (req, res) => {
   res.send(importData);
 });
 
-app.post("/saveData", (req, res) => {
-  res.status(201).send("saved succesfuly");
-});
+app.post("/product-info", createProductController);
 
-// const usersInfoSchema = new Schema  
+// const usersInfoSchema = new Schema
 // ({
 //   firstName: {
 //       type: String,
@@ -117,7 +119,7 @@ app.post("/saveData", (req, res) => {
 //   lastName: {
 //       type: String,
 //       required: true
-//   }   
+//   }
 // })
 
 app.put("/updateData", (req, res) => {
