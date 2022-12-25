@@ -127,7 +127,7 @@ app.get("/product-info", (req, res) => {
 
 app.post("/product-info-buy", createProductController);
 
-// app.post("/sign-up", createSignUpController);
+app.post("/sign-up", createSignUpController);
 
 app.put("/updateData", (req, res) => {
   res.send("updated succesfully");
