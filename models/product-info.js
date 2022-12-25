@@ -11,4 +11,4 @@ const productInfoSchema = new Schema({
     }   
 })
 
-module.exports = model('UserInfo', productInfoSchema);   
+module.exports = model('ProductInfo', productInfoSchema);   

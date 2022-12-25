@@ -9,6 +9,7 @@ const { model, Schema } = require("mongoose");
 const {
   createProductController,
 } = require("./controllers/product-info.controller");
+const { createSignUpController } = require("./controllers/sign-up.controller");
 const mongoose = require("mongoose");
 const { json } = require("body-parser");
 let port = process.env.PORT || 3000;
@@ -44,7 +45,6 @@ const uri =
   "mongodb+srv://jasur:YXnNb3qrDRuQutbR@cluster0.luf7pct.mongodb.net/test";
 
 async function connect() {
-
   try {
     await mongoose.connect(uri);
     console.log("Connected MongoDB ");
@@ -56,7 +56,7 @@ connect();
 
 /**
  * @swagger
- * /getData:
+ * /product-info:
  *   get:
  *     description: This is a get api call
  *     responses:
@@ -66,7 +66,7 @@ connect();
 
 /**
  * @swagger
- * /saveData:
+ * /product-info-buy:
  *   post:
  *     description: This is post method
  *     responses:
@@ -94,10 +94,27 @@ connect();
  * @swagger
  * /deleteData:
  *   delete:
- *     description: This is delete method api
+ *     description: This is delete method api for users sign up
  *     responses:
  *       200:
  *         description: deleted success
+ */
+
+
+/**
+ * @swagger
+ * /sign-up:
+ *   post:
+ *     description: This is post method
+ *     responses:
+ *       201:
+ *         description: Sign Up succesfull
+ * 403 :
+ *      description : Forbidden
+ *parameters : 
+    -name : TITLE 
+    in : formData
+    required : true
  */
 
 app.get("/", (req, res) => {
@@ -108,19 +125,9 @@ app.get("/product-info", (req, res) => {
   res.send(importData);
 });
 
-app.post("/product-info", createProductController);
+app.post("/product-info-buy", createProductController);
 
-// const usersInfoSchema = new Schema
-// ({
-//   firstName: {
-//       type: String,
-//       required: true
-//   },
-//   lastName: {
-//       type: String,
-//       required: true
-//   }
-// })
+// app.post("/sign-up", createSignUpController);
 
 app.put("/updateData", (req, res) => {
   res.send("updated succesfully");
