@@ -8,8 +8,11 @@ const path = require("path");
 const { model, Schema } = require("mongoose");
 const {
   createProductController,
+  getProductInfoController , 
+  deleteProductController
 } = require("./controllers/product-info.controller");
 const { createSignUpController } = require("./controllers/sign-up.controller");
+// const {getProductInfoController} = require("./controllers/")
 const mongoose = require("mongoose");
 const { json } = require("body-parser");
 let port = process.env.PORT || 3000;
@@ -80,6 +83,22 @@ connect();
     required : true
  */
 
+    /**
+ * @swagger
+ * /product-info-buy:
+ *   get:
+ *     description: this is products buy get method
+ *     responses:
+ *       200:
+ *         description: Products lists
+ * 400:
+ *      description : Error user 
+ *parameters : 
+    -name : TITLE 
+    in : formData
+    required : true
+ */
+
 /**
  * @swagger
  * /updateData:
@@ -129,13 +148,13 @@ app.post("/product-info-buy", createProductController);
 
 app.post("/sign-up", createSignUpController);
 
+app.get("/product-info-buy" , getProductInfoController)
+
 app.put("/updateData", (req, res) => {
   res.send("updated succesfully");
 });
 
-app.delete("/deleteData", (req, res) => {
-  res.send("deleted succesfully");
-});
+app.delete("/product-info-buy/:id",  deleteProductController);
 
 app.listen(port, () => {
   console.log(`Example app is listening on port https://localhost:${port}`);
