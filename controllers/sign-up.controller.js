@@ -1,11 +1,9 @@
 const SignUp = require('../models/sign-up');
-// const UserInfo = require('../models/product-info');
 
-// const getUsersController = async (req, res) => {
-//     const usersInfo = await UserInfo.find();
-//     res.status(200).json({usersInfo});
-// }
-
+const getSignUpController = async (req, res) => {
+    const signUp = await SignUp.find();
+    res.status(200).json({ signUp });
+  };
 
 
 const createSignUpController = async (req, res) => {
@@ -21,6 +19,6 @@ const createSignUpController = async (req, res) => {
 }
 
 module.exports = {
-    // getUsersController,
+    getSignUpController , 
     createSignUpController
 }

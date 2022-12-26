@@ -1,4 +1,3 @@
-const { request } = require("express");
 const ProductInfo = require("../models/product-info");
 
 const getProductInfoController = async (req, res) => {
@@ -33,7 +32,7 @@ const deleteProductController = async (req, res) => {
         return res
           .status(404)
           .json({
-            message: "Бунака махсулот йок йоли алакачон учирилиб буган",
+            message: "This is product none or already deleted",
           });
 
       await ProductInfo.deleteOne({ _id: id });

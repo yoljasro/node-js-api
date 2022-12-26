@@ -9,10 +9,9 @@ const { model, Schema } = require("mongoose");
 const {
   createProductController,
   getProductInfoController , 
-  deleteProductController
+  deleteProductController ,
 } = require("./controllers/product-info.controller");
-const { createSignUpController } = require("./controllers/sign-up.controller");
-// const {getProductInfoController} = require("./controllers/")
+const { createSignUpController , getSignUpController } = require("./controllers/sign-up.controller");
 const mongoose = require("mongoose");
 const { json } = require("body-parser");
 let port = process.env.PORT || 3000;
@@ -136,9 +135,20 @@ connect();
     required : true
  */
 
+    /**
+ * @swagger
+ * /sign-up:
+ *   get:
+ *     description: Created users in database
+ *     responses:
+ *       200:
+ *         description: Users lists
+ */
+
 app.get("/", (req, res) => {
   res.send("Hello  world");
 });
+
 
 app.get("/product-info", (req, res) => {
   res.send(importData);
@@ -147,6 +157,8 @@ app.get("/product-info", (req, res) => {
 app.post("/product-info-buy", createProductController);
 
 app.post("/sign-up", createSignUpController);
+
+app.get("/sign-up" , getSignUpController)
 
 app.get("/product-info-buy" , getProductInfoController)
 
