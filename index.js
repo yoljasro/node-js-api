@@ -20,7 +20,7 @@ const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "Node Js API from JasurBek",
+      title: "Node Js API from JasurBek 1",
       version: "1.0.0",
     },
 
@@ -41,8 +41,8 @@ app.use(json());
 
 const swaggerSpec = swaggerJSDOC(options);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-// app.use(express.static('public'));
-app.use('/' , express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
+app.use('/img' , express.static(path.join(__dirname, 'public/img')));
 
 const uri =
   "mongodb+srv://jasur:YXnNb3qrDRuQutbR@cluster0.luf7pct.mongodb.net/test";
