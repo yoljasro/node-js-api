@@ -41,8 +41,9 @@ app.use(json());
 
 const swaggerSpec = swaggerJSDOC(options);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+// app.use(express.static('public'));
+app.use('/' , express.static(path.join(__dirname, 'public')));
 
-// mongodb+srv://<username>:<password>@cluster0.luf7pct.mongodb.net/?retryWrites=true&w=majority
 const uri =
   "mongodb+srv://jasur:YXnNb3qrDRuQutbR@cluster0.luf7pct.mongodb.net/test";
 
