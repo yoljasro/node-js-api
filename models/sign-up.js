@@ -16,3 +16,4 @@ const signUpSchema = new Schema({
 });
 
 module.exports = model("signUp", signUpSchema);
+  

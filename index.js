@@ -8,10 +8,15 @@ const path = require("path");
 const { model, Schema } = require("mongoose");
 const {
   createProductController,
-  getProductInfoController , 
-  deleteProductController ,
+  getProductInfoController,
+  deleteProductController, 
+  updateProductController
 } = require("./controllers/product-info.controller");
-const { createSignUpController , getSignUpController } = require("./controllers/sign-up.controller");
+const {
+  createSignUpController,
+  getSignUpController,
+} = require("./controllers/sign-up.controller");
+const {createSignInController , getSignInController} = require("./controllers/sign-in.controller")
 const mongoose = require("mongoose");
 const { json } = require("body-parser");
 let port = process.env.PORT || 3000;
@@ -41,8 +46,8 @@ app.use(json());
 
 const swaggerSpec = swaggerJSDOC(options);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-app.use(express.static('public'));
-app.use('/img' , express.static(path.join(__dirname, 'public/img')));
+app.use(express.static("public"));
+app.use("/img", express.static(path.join(__dirname, "public/img")));
 
 const uri =
   "mongodb+srv://jasur:YXnNb3qrDRuQutbR@cluster0.luf7pct.mongodb.net/test";
@@ -83,7 +88,7 @@ connect();
     required : true
  */
 
-    /**
+/**
  * @swagger
  * /product-info-buy:
  *   get:
@@ -101,24 +106,23 @@ connect();
 
 /**
  * @swagger
- * /updateData:
+ * /product-info-buy:
  *   put:
- *     description: This is update method
+ *     description: This is for product put method 
  *     responses:
  *       200:
- *         description: Success
+ *         description: Updated
  */
 
 /**
  * @swagger
- * /deleteData:
+ * /product-info-buy/:id:
  *   delete:
- *     description: This is delete method api for users sign up
+ *     description: This is delete method for products
  *     responses:
  *       200:
  *         description: deleted success
  */
-
 
 /**
  * @swagger
@@ -136,7 +140,7 @@ connect();
     required : true
  */
 
-    /**
+/**
  * @swagger
  * /sign-up:
  *   get:
@@ -146,28 +150,41 @@ connect();
  *         description: Users lists
  */
 
+/**
+ * @swagger
+ * /sign-in:
+ *   post:
+ *     description: this is login post method
+ *     responses:
+ *       200:
+ *         description: Users login succesfull
+ */
+
 app.get("/", (req, res) => {
   res.send("Hello  world");
 });
-
 
 app.get("/product-info", (req, res) => {
   res.send(importData);
 });
 
-app.post("/product-info-buy", createProductController);
+app.post("/product-info-buy", createProductController );
 
-app.post("/sign-up", createSignUpController);
+app.post("/sign-up", createSignUpController)   
 
-app.get("/sign-up" , getSignUpController)
+app.post("/sign-in" ,createSignInController )
 
-app.get("/product-info-buy" , getProductInfoController)
+app.get("/sign-up", getSignUpController);
+
+app.get("/product-info-buy", getProductInfoController);
 
 app.put("/updateData", (req, res) => {
   res.send("updated succesfully");
 });
 
-app.delete("/product-info-buy/:id",  deleteProductController);
+app.delete("/product-info-buy/:id", deleteProductController);
+
+app.put("/product-info-buy"  , updateProductController)
 
 app.listen(port, () => {
   console.log(`Example app is listening on port https://localhost:${port}`);
