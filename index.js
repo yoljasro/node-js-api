@@ -1,11 +1,11 @@
 const express = require("express");
+const authMiddleware = require('./middlewares/auth.middleware');
 const app = express();
 const importData = require("./data.json");
 const swaggerJSDOC = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 const cors = require("cors");
 const path = require("path");
-const { model, Schema } = require("mongoose");
 const {
   createProductController,
   getProductInfoController,
@@ -13,10 +13,10 @@ const {
   updateProductController
 } = require("./controllers/product-info.controller");
 const {
-  createSignUpController,
-  getSignUpController,
-} = require("./controllers/sign-up.controller");
-const {createSignInController , getSignInController} = require("./controllers/sign-in.controller")
+  createUserController,
+  loginController,
+  getUserController
+} = require("./controllers/user.controllers");
 const mongoose = require("mongoose");
 const { json } = require("body-parser");
 let port = process.env.PORT || 3000;
@@ -160,6 +160,12 @@ connect();
  *         description: Users login succesfull
  */
 
+app.use((req, res, next) => {
+  req.headers.authorization
+  console.log(req.path);
+  next();
+})
+
 app.get("/", (req, res) => {
   res.send("Hello  world");
 });
@@ -170,11 +176,11 @@ app.get("/product-info", (req, res) => {
 
 app.post("/product-info-buy", createProductController );
 
-app.post("/sign-up", createSignUpController)   
+app.post("/auth/register", createUserController)   
 
-app.post("/sign-in" ,createSignInController )
+app.post("/auth/login" , loginController)
 
-app.get("/sign-up", getSignUpController);
+app.get("/users/profile", authMiddleware, getUserController);
 
 app.get("/product-info-buy", getProductInfoController);
 
