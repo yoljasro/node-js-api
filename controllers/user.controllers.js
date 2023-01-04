@@ -8,7 +8,7 @@ const getUserController = async (req, res) => {
   const user = await User
   .findOne({_id: userId})
   .select('email name');
-  
+
   res.status(200).json({ user });
 };
 
@@ -21,7 +21,7 @@ const createUserController = async (req, res) => {
 
      
     if (candidate)
-      return res.status(400).json({message: 'С таким email пользователь сущ.'});
+      return res.status(400).json({message: 'Email already exits'});
 
     const hashPassword = await bcrypt.hash(password, 12);
 
@@ -33,10 +33,10 @@ const createUserController = async (req, res) => {
 
     const user = await new User(newUser).save();
 
-    res.status(201).json({message: 'Пользователь создан', data: user});
+    res.status(201).json({message: 'User created', data: user});
   } catch (e) {
     console.log(e.message);
-    res.status(500).json({message: 'Ошибка сервера'});
+    res.status(500).json({message: 'Server error'});
   }
 };
 
@@ -46,12 +46,12 @@ const loginController = async (req, res) => {
   const user = await User.findOne({ email });
 
   if (!user)
-    return res.status(404).json({message: 'Такой пользователь не сущ.'});
+    return res.status(404).json({message: 'User not found!'});
 
   const isValidePassword = await bcrypt.compare(password, user.password);
 
   if (!isValidePassword)
-    return res.status(401).json({message: 'Логин или пароль не верно'});
+    return res.status(401).json({message: 'Login or password not found '});
 
   const payload = {
     userId: user._id

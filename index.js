@@ -72,21 +72,37 @@ connect();
  *         description: Success
  */
 
+
 /**
  * @swagger
  * /product-info-buy:
  *   post:
- *     description: This is post method
+ *     summary: Products buy
+ *     requestBody:
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              properties:
+ *                name:
+ *                  type: string
+ *                price:
+ *                  type: string
+ *              required:
+ *                - name
+ *                - price
+ *     description: This is post method for products buy
  *     responses:
- *       201:
- *         description: Products saved in Database
- * 403 :
- *      description : Forbidden
+ *       200:
+ *         description: Products saved in database  
+ * 400 :
+ *      description : Already exites email users
  *parameters : 
     -name : TITLE 
     in : formData
     required : true
  */
+
 
 /**
  * @swagger
@@ -126,14 +142,31 @@ connect();
 
 /**
  * @swagger
- * /sign-up:
+ * /auth/register:
  *   post:
- *     description: This is post method
+ *     summary: Регистрация
+ *     requestBody:
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              properties:
+ *                email:
+ *                  type: string
+ *                password:
+ *                  type: string
+ *                name : 
+ *                  type : string
+ *              required:
+ *                - email
+ *                - password
+ *                - name
+ *     description: This is for user sign up post method
  *     responses:
  *       201:
- *         description: Sign Up succesfull
- * 403 :
- *      description : Forbidden
+ *         description: Sign Up succesfull  
+ * 400 :
+ *      description : Already exites email users
  *parameters : 
     -name : TITLE 
     in : formData
@@ -142,23 +175,45 @@ connect();
 
 /**
  * @swagger
- * /sign-up:
+ * /users/profile:
  *   get:
- *     description: Created users in database
+ *     description : This is registered users get method
  *     responses:
  *       200:
- *         description: Users lists
+ *         description: registered Users list
  */
+
 
 /**
  * @swagger
- * /sign-in:
+ * /auth/login:
  *   post:
- *     description: this is login post method
+ *     summary: Login
+ *     requestBody:
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              properties:
+ *                email:
+ *                  type: string
+ *                password:
+ *                  type: string
+ *              required:
+ *                - email
+ *                - password
+ *     description: This is for user login post method
  *     responses:
  *       200:
- *         description: Users login succesfull
+ *         description: Sign Up succesfull  
+ * 404 :
+ *      description : User not found
+ *parameters : 
+    -name : TITLE 
+    in : formData
+    required : true
  */
+
 
 app.use((req, res, next) => {
   req.headers.authorization
@@ -167,7 +222,7 @@ app.use((req, res, next) => {
 })
 
 app.get("/", (req, res) => {
-  res.send("Hello  world");
+  res.send("Hello. I'm Jasur. This is Node js API for online shop. APIs in swagger if you type /api-docs route looks .");
 });
 
 app.get("/product-info", (req, res) => {
