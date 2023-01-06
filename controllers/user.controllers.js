@@ -33,7 +33,7 @@ const createUserController = async (req, res) => {
 
     const user = await new User(newUser).save();
 
-    res.status(201).json({message: 'User created', data: user});
+    res.status(201).json({message: 'User succesfully created', data: user});
   } catch (e) {
     console.log(e.message);
     res.status(500).json({message: 'Server error'});
@@ -56,7 +56,7 @@ const loginController = async (req, res) => {
   const payload = {
     userId: user._id
   };
-  const accessToken = jwt.sign(payload, '123456', {expiresIn: '1h'});
+  const accessToken = jwt.sign(payload, '123456', {expiresIn:'2h'});
   res.status(200).json({accessToken});
 }
 
