@@ -6,7 +6,7 @@
         "place":"Turkey",
         "price":50,
         "phone":"+998941234567",
-        "image":"img1.jpg"
+        "image":"http://139.144.180.200:3000/img/img9.jpg"
     },
     {
         "id":2,

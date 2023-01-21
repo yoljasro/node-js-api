@@ -235,7 +235,7 @@ app.post("/auth/register", createUserController)
 
 app.post("/auth/login" , loginController)
  
-app.get("/users/profile", authMiddleware, getUserController);
+app.get("/users/profile", getUserController);
 
 app.get("/product-info-buy", getProductInfoController);
 
